@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    /*
+    元素之间的关系
+    父元素：直接包含子元素的元素
+    子元素：直接被父元素包含的元素
+    祖先元素：直接或间接包含后代元素的元素,父元素也是祖先元素
+    后代元素: 直接或间接被祖先元素包含的元素，子元素也是后代元素
+    兄弟元素： 拥有相同父元素的元素叫做兄弟元素
+    */
+
+    /*
+    后代元素选择器
+    祖先 后代{}
+    */
+    /*div span{*/
+    /*    color: aqua;*/
+    /*}*/
+
+    /*
+    子类元素选择器
+    父类 > 子类{}
+    */
+    /*div > span{*/
+    /*    color: red;*/
+    /*}*/
+
+    /*p[title]{*/
+    /*    background-color: pink;*/
+    /*}*/
+    /*p[title=a]{*/
+    /*    color: red;*/
+    /*}*/
+    /*p[title^=b]{*/
+    /*    color: blue*/
+    /*}*/
+    /*p[title$=d]{*/
+    /*    color: yellow;*/
+    /*}*/
+    /*p[title*=f]{*/
+    /*    color: green;*/
+    /*}*/
+
+
+
+
+    *{
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav{
+        background-color: rgb(94,148,238);
+        /*border: 1px solid red;*/
+        width: 980px;
+        margin: 50px auto;
+        overflow: hidden;
+    }
+
+    .nav ul li{
+        list-style: none;
+    }
+
+    .nav ul li{
+         width: 25%;
+         float: left;
+     }
+    .nav ul a{
+        width: 100%;
+        display: inline-block;
+        padding: 10px;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font:  18px "微软雅黑";
+    }
+
+    /*选择属于其父元素的首个子元素的每个 <p> 元素*/
+    /*p:first-child*/
+    /*{*/
+    /*    background-color:yellow;*/
+    /*}*/
+    /*p:first-child i*/
+    /*{*/
+    /*    background:yellow;*/
+    /*}*/
+
+    /*p:first-of-type*/
+    /*{*/
+    /*    background:yellow;*/
+    /*}*/
+
+    /*.nav a:link {background-color: #FF0000}		!* 未访问的链接 *!*/
+    .nav a:visited {background-color: #00FF00}	/* 已访问的链接 */
+    .nav a:hover {background-color: red}	/* 鼠标移动到链接上 */
+    .nav a:active {background-color: #0000FF}	/* 选定的链接 */
+</style>
+<body>
+<!--<span></span>-->
+<!--<p>I am a <i>strong</i> man. I am a <i>strong</i> man.</p>-->
+<!--<p>I am a <i>strong</i> man. I am a <i>strong</i> man.</p>-->
+<!--<div><p>我也是div里面的第一个p元素</p></div>-->
+
+<div class="nav">
+    <ul>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">新闻</a></li>
+        <li><a href="#">联系</a></li>
+        <li><a href="#">关于</a></li>
+    </ul>
+</div>
+<!--    <div>-->
+<!--        <span>我是div的span1元素</span>-->
+<!--        <p>-->
+<!--            <span>我是p的span元素</span>-->
+<!--        </p>-->
+<!--        <span>我是div的span2元素</span>-->
+<!--    </div>-->
+
+<!--    <span>我是body的span元素</span>-->
+
+<!--    <p title="a">a</p>-->
+<!--    <p title="b">b</p>-->
+<!--    <p title="bc">c</p>-->
+<!--    <p title="d">d</p>-->
+<!--    <p title="ed">e</p>-->
+<!--    <p title="afb">f</p>-->
+
+<!--<div><p>我也是div里面的第一个p元素</p></div>-->
+
+<!--<q>学而时习之，不亦说乎</q>-->
+<!--<blockquote>学而时习之，不亦说乎</blockquote>-->
+<!--<ol type="A">-->
+<!--    <li></li>-->
+<!--    <li></li>-->
+<!--    <li></li>-->
+<!--</ol>-->
+<!--<div class="box3"></div>-->
+</body>
+</html>

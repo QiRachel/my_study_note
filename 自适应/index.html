@@ -1,0 +1,52 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #test{
+            /*width:16rem;*/
+            /*height:16rem;*/
+            width:200px;
+            height:200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div id="test">test</div>
+<script>
+    // var html = document.querySelector('html');
+    // console.log(html)
+    // 1rem = html.style.fontSize
+    // 布局视口的宽度就是16rem
+    // 设计图的高度就是16rem
+    // html.style.fontSize=document.documentElement.clientWidth/16 + 'px';
+    // (function () {
+    //     var styleNode = document.createElement('style');
+    //     var w = document.documentElement.clientWidth /16;
+    //     styleNode.innerHTML = "html{font-size:"+w+"px!important}";
+    //     document.head.appendChild(styleNode);
+    // })()
+
+    //将布局视口宽度调整为设计图的宽度
+    // var targetW  = 750;
+    // var  scale =  screen.width / targetW; //理想视口/
+    // var meta = document.createElement('meta');
+    // meta.name = 'viewport';
+    // meta.content = 'user-scalable=no, initial-scale='+scale+', maximum-scale='+scale+', minimum-scale='+scale;
+    // document.head.appendChild(meta);
+    (function () {
+        var targetW  = 640;
+        var  scale =  document.documentElement.clientWidth / targetW; //理想视口/
+        var meta = document.querySelector('meta[name="viewport"]');
+        meta.content = 'user-scalable=no, initial-scale='+scale+', maximum-scale='+scale+', minimum-scale='+scale;
+    })()
+</script>
+</body>
+</html>
