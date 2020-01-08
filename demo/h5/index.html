@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>angular</title>
+</head>
+<body ng-app='myApp'>
+	<div ng-controller='myCtrl1'>
+		<input type="" ng-model="name">
+		{{name}}
+
+	</div>
+	<div ng-controller='myCtrl2'>
+		<table>
+		  <tr  ng-repeat="x in record">
+		    <td >{{ x.Name }}</td>
+		    <td >{{ x.Country }}</td>
+ 		 </tr>
+		</table>
+	</div>
+<!-- <script src="https://cdn.staticfile.org/angular.js/1.2.29/angular.min.js"></script> -->
+<!-- <script type="text/javascript">
+	function mycontroller($scope){
+		console.log($scope)
+		$scope.name = 'kobi'
+	}
+</script> -->
+<script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+
+<script type="text/javascript">
+	// var app = angular.module('myApp', []);
+	// app.controller('myCtrl1', function($scope) {
+	//     $scope.name= "John";
+	// });
+	// app.controller('myCtrl2', function($scope) {
+	//     $scope.name= "kobo";
+	// });
+
+	// angular.module('myApp', [])
+	// .controller('myCtrl1', function($scope) {//返回值是模块对象
+	//     $scope.name= "John";
+	// })
+	// .controller('myCtrl2', function($scope) {//隐式声明，依赖注入
+	//   	$scope.name= "kobo";
+	// });
+
+	//解决解压时$scope被替换
+	angular.module('myApp', [])
+	.controller('myCtrl1', ['$scope',function(a) {//返回值是模块对象
+	    a.name= "John";
+	}])
+	.controller('myCtrl2', function($scope) {
+	  	$scope.record= [
+				{"Name":"Alfreds Futterkiste","City":"Berlin","Country":"Germany"},
+				{"Name":"Ana Trujillo Emparedados y helados","City":"México D.F.","Country":"Mexico"},
+				{"Name":"Antonio Moreno Taquería","City":"México D.F.","Country":"Mexico"},
+				{"Name":"Around the Horn","City":"London","Country":"UK"},
+				{"Name":"B's Beverages","City":"London","Country":"UK"},
+				{"Name":"Berglunds snabbköp","City":"Luleå","Country":"Sweden"},
+				{"Name":"Blauer See Delikatessen","City":"Mannheim","Country":"Germany"},
+				{"Name":"Blondel père et fils","City":"Strasbourg","Country":"France"},
+				{"Name":"Bólido Comidas preparadas","City":"Madrid","Country":"Spain"},
+				{"Name":"Bon app'","City":"Marseille","Country":"France"},
+				{"Name":"Bottom-Dollar Marketse","City":"Tsawassen","Country":"Canada"},
+				{"Name":"Cactus Comidas para llevar","City":"Buenos Aires","Country":"Argentina"},
+				{"Name":"Centro comercial Moctezuma","City":"México D.F.","Country":"Mexico"},
+				{"Name":"Chop-suey Chinese","City":"Bern","Country":"Switzerland"},
+				{"Name":"Comércio Mineiro","City":"São Paulo","Country":"Brazil"}
+			]
+	});
+</script>
+</body>
+</html>
